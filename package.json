@@ -1,7 +1,7 @@
 {
-  "name": "chrome-extension-typescript-starter",
+  "name": "que-mas",
   "version": "1.0.0",
-  "description": "chrome-extension-typescript-starter",
+  "description": "A simple, clean, ans elegent implementation of the features that would make life easier on whatsapp.",
   "main": "index.js",
   "scripts": {
     "watch": "webpack --config webpack/webpack.dev.js --watch",

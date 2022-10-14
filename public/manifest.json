@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "qué más: what more",
   "description": "A simple, clean, ans elegent implementation of the features that would make life easier on whatsapp.",
   "version": "1.0.0",
