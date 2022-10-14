@@ -1,1 +1,0 @@
-console.log("yay! I'm a content script!");
