@@ -16,4 +16,15 @@ const onInnerHTMLChange = (node: Node, callback: (mutations: MutationRecord[]) =
   return observer;
 }
 
-export { changeChildrenEvent, onInnerHTMLChange };
+const onReadyElement = (selector: string, callback: () => void) => {
+  const element = document.querySelector(selector);
+  if (element) {
+    callback();
+  } else {
+    setTimeout(() => {
+      onReadyElement(selector, callback);
+    }, 200);
+  }
+}
+
+export { changeChildrenEvent, onInnerHTMLChange, onReadyElement };
