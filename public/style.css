@@ -106,7 +106,8 @@ body {
      }
 }
 
-.placeholderBox {
-     width: max-content;
+.placeholderBox,
+.lhggkp7q {
+     white-space: pre;
      cursor: text;
 }
