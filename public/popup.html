@@ -4,7 +4,6 @@
 <head>
      <title>que mas</title>
      <link rel="stylesheet" href="style.css">
-     <script src="script.js"></script>
 </head>
 
 <body>
@@ -16,45 +15,44 @@
      <h4>Your Default Language</h4>
      <div class="flex_box">
           <div style="width: 50%; font-size: large;">
-               <span class="default_in">English</span>
+               <span class="my_default">English</span>
           </div>
           <div style="width: 50%;">
                <span style="align-items: right;">Choose:</span>
-               <select name="language" id="language">
-                    <option value="English">English</option>
+               <select name="language" id="my_language">
+                    <!-- <option value="English">English</option>
                     <option value="Hindi">Hindi</option>
                     <option value="Spanish">Spanish</option>
-                    <option value="german">German</option>
+                    <option value="German">German</option> -->
+                    <option value="" selected>-- Select --</option>
                </select>
           </div>
      </div>
      <h4>To translate Language</h4>
      <div class="flex_box" style=" margin-bottom: 2rem ;">
           <div style="width: 50%; font-size: large;">
-               <span class="default_out">Hindi</span>
+               <span class="other_default">Hindi</span>
           </div>
           <div style="width: 50%;">
                <span style="align-items: right;">Choose:</span>
-               <select name="language" id="language">
+               <!-- <select name="language" id="other_language">
                     <option value="English">English</option>
                     <option value="Hindi">Hindi</option>
                     <option value="Spanish">Spanish</option>
-                    <option value="german">German</option>
+                    <option value="German">German</option>
+               </select> -->
+               <select id="other_language" name="language">
+                    <option value="" selected>-- Select --</option>
                </select>
           </div>
      </div>
 
-
-     <div class="qm_box">
-          <div class="left_text">
-               <span>Translate</span>
-          </div>
-          <div class="bubble">
-               <span class="bubble-outer-dot">
-                    <span class="bubble-inner-dot"></span>
-               </span>
-          </div>
+     <div class="flex_box">
+          <div style="width: 50%;"></div>
+          <span style="width: 50%; font-size: medium; color: rgba(0, 111, 190, 0.7);">Version : 1.0.0 </span>
      </div>
+
+     <script src="script.js"></script>
 </body>
 
 </html>
