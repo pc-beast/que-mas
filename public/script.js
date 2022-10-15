@@ -8,10 +8,6 @@ let list = [
           "name": "Hindi"
      },
      {
-          "sbl": "ar",
-          "name": "Arabic"
-     },
-     {
           "sbl": "hy",
           "name": "Armenian"
      },
