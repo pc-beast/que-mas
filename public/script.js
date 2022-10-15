@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-function selectNum() {
-     const selectedValue = document.getElementById("language").value;
-     const defaultLang = document.getElementsByClassName(".default_in");
-
-     defaultLang.innerHTML = selectedValue;
-}
-=======
 let list = [
      {
           "sbl": "en",
@@ -127,4 +119,3 @@ const OtherLanguage = async () => {
 
 OtherLanguage()
 // export { MyLanguage, OtherLanguage }
->>>>>>> 97a31ca490f8b35858fb2a8b731d98eb572900bb

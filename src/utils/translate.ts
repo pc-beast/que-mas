@@ -1,7 +1,3 @@
-// import {myLang, otherLang} from "../../public/script.js";
-// import languageList from "../../public/languageList";
-// const TRANSLATE_API = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=hi&dt=t&q=";
-
 const translate = async (text: string) => {
      const my_lang = await chrome.storage.sync.get('my_default_lang');
      const sl = my_lang.my_default_lang;

@@ -30,7 +30,6 @@ const onReadyElement = (selector: string, callback: () => void) => {
 
 const isDotPresent = () => {
   const dot = document.querySelector('.qm_box');
-  console.log(!!dot);
   return dot ? true : false;
 }
 
