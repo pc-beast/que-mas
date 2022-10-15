@@ -1,3 +1,4 @@
+
 const changeChildrenEvent = (node: Node, callback: (mutations: MutationRecord[]) => void) => {
   const observer = new MutationObserver(callback);
   observer.observe(node, {
