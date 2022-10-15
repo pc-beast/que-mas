@@ -20,8 +20,12 @@
      ],
      "permissions": [
           "activeTab",
-          "storage"
+          "storage",
+          "contextMenus"
      ],
+     "background": {
+          "service_worker": "eventPage.js"
+     },
      "action": {
           "default_icon": "128.png",
           "default_popup": "popup.html"
