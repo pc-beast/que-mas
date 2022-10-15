@@ -1,4 +1,4 @@
-import { translate } from './utils/translate';
+import { desanitizeText, translate } from './utils/translate';
 import { changeChildrenEvent, onInnerHTMLChange, onReadyElement } from './utils/watchers';
 
 const translateMessagesCallback = async () => {
@@ -9,8 +9,9 @@ const translateMessagesCallback = async () => {
     const message = messages[i];
     const text = message.textContent;
     if (text) {
-      const translatedText = await translate(text);
-      message.textContent = translatedText;
+      let translatedText = await translate(text);
+      translatedText = desanitizeText(translatedText);
+      message.innerHTML = translatedText;
     }
   }
 }

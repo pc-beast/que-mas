@@ -6,4 +6,18 @@ const translate = async (text: string) => {
   return data[0][0][0];
 }
 
-export {translate};
+const sanitizeText = (text: string) => {
+  return text.replace(/(\r\n|\n|\r)/gm, "");
+}
+
+const desanitizeText = (text: string) => {
+  const links = text.match(/(https?:\/\/[^\s]+)/g);
+  if (links) {
+    links.forEach(link => {
+      text = text.replace(link, `<a href="${link}" target="_blank">${link}</a>`);
+    });
+  }
+  return text;
+}
+
+export {translate, sanitizeText, desanitizeText};
