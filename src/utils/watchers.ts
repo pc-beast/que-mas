@@ -28,4 +28,10 @@ const onReadyElement = (selector: string, callback: () => void) => {
   }
 }
 
-export { changeChildrenEvent, onInnerHTMLChange, onReadyElement };
+const isDotPresent = () => {
+  const dot = document.querySelector('.qm_box');
+  console.log(!!dot);
+  return dot ? true : false;
+}
+
+export { changeChildrenEvent, onInnerHTMLChange, onReadyElement, isDotPresent };
