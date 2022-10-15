@@ -17,6 +17,8 @@
     "url": "https://github.com/pc-beast/que-mas.git"
   },
   "devDependencies": {
+    "@testing-library/dom": "^8.19.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/chrome": "0.0.158",
     "@types/jest": "^27.0.2",
     "copy-webpack-plugin": "^9.0.1",
