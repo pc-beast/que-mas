@@ -1,3 +1,4 @@
+import { boxComponent } from './components/dot';
 import { desanitizeText, translate } from './utils/translate';
 import { changeChildrenEvent, onInnerHTMLChange, onReadyElement } from './utils/watchers';
 
@@ -6,7 +7,7 @@ const translateMessagesCallback = async (e: Event) => {
   const messageOut = document.querySelectorAll('.message-out .copyable-text .selectable-text span');
   const messages = [...messageOut, ...messagesIn];
   const filterMessages = messages.filter(message => message.classList.contains('translated') === false);
-  for (let i = filterMessages.length-1; i >= 0; i--) {    
+  for (let i = filterMessages.length - 1; i >= 0; i--) {
     const message = filterMessages[i];
     const text = message.textContent;
     if (text && !message.classList.contains('translated')) {
@@ -38,6 +39,14 @@ try {
     const inputNode = document.querySelector('[data-testid="conversation-compose-box-input"] .selectable-text span');
     onInnerHTMLChange(inputNode as Node, translateInputCallback);
   });
+
+  onReadyElement('footer [data-testid="compose-box"] span:nth-child(2) > div > div:nth-child(2) > div', () => {
+    const textbox = document.querySelector('footer [data-testid="compose-box"] span:nth-child(2) > div > div:nth-child(2) > div')
+    textbox?.classList.add('textbox_flex');
+    const qm_box = boxComponent();
+    textbox?.appendChild(qm_box);
+  });
+
 } catch (error) {
   console.error("Error: ", error);
 }

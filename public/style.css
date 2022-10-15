@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html {
+     min-width: 15rem;
+}
+
+body {
+     font-family: 'Poppins', sans-serif;
+}
+
+.image {
+     height: 60px;
+     padding: 2px;
+     border-radius: 20px;
+     border: 2px solid rgba(0, 149, 255, 0.7);
+}
+
+.flex_box {
+     display: flex;
+     gap: 5px;
+     align-items: center;
+}
+
+.textbox_flex {
+     display: flex;
+     justify-content: space-between;
+     
+}
+
+.qm_box {
+     display: flex;
+     gap: 10px;
+     align-items: center;
+     width: 100px;
+}
+
+.left_text {
+     background-color: rgba(0, 149, 255, 0.7);
+     color: white;
+     border-radius: 3px;
+     padding: 1px 2px;
+     opacity: 0;
+     max-width: 60%;
+     transition: all .5s ease
+}
+
+.qm_box:hover>.left_text {
+     opacity: 1;
+}
+
+.bubble .bubble-outer-dot {
+     display: block;
+     text-align: center;
+     opacity: 1;
+     background-color: rgba(0, 149, 255, 0.4);
+     width: 12px;
+     height: 12px;
+     border-radius: 50%;
+     animation: bubble-pulse 1.5s linear infinite;
+}
+
+.bubble {
+     display: block;
+     max-width: 150px;
+     position: relative;
+     z-index: 10;
+     cursor: pointer;
+     background-color: #3af;
+     width: 12px;
+     height: 12px;
+     border-radius: 50%;
+     margin: 5px 0px;
+}
+
+
+
+.bubble .bubble-inner-dot {
+     background-position: relative;
+     display: block;
+     text-align: center;
+     opacity: 1;
+     background-color: rgba(0, 149, 255, 0.4);
+     width: 12px;
+     height: 12px;
+     border-radius: 50%;
+     -webkit-animation: bubble-pulse 1.5s linear infinite;
+     -moz-animation: bubble-pulse 1.5s linear infinite;
+     -o-animation: bubble-pulse 1.5s linear infinite;
+     animation: bubble-pulse 1.5s linear infinite;
+}
+
+@keyframes bubble-pulse {
+     0% {
+          transform: scale(1);
+          opacity: .75;
+     }
+
+     25% {
+          transform: scale(1);
+          opacity: .75;
+     }
+
+     100% {
+          transform: scale(2);
+          opacity: 0
+     }
+}
