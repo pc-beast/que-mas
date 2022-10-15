@@ -19,9 +19,11 @@
           }
      ],
      "permissions": [
-          "activeTab"
+          "activeTab",
+          "storage"
      ],
      "action": {
+          "default_icon": "128.png",
           "default_popup": "popup.html"
      }
 }
