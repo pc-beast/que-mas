@@ -22,10 +22,17 @@ const extractLink = (text: string) => {
   return '';
 };
 
+const today = () => {
+  const today = new Date().toLocaleDateString();
+  const dateArr = today.split('/');
+  return `${dateArr[1]}/${dateArr[0]}/${dateArr[2]}`;
+}
+
 const addToGoogleCalendar = (description: string) => {
   const calender_url = "https://calendar.google.com/calendar/r/eventedit";
+
   const title = "WhatsApp Event-" + new Date().toLocaleString();
-  const date = extractDate(description);
+  const date = extractDate(description) || today();
   const dateArr = date.split('/');
   const dateStr = dateArr[2] + dateArr[1] + dateArr[0];
   const time = extractTime(description);
