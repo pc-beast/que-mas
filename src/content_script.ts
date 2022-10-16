@@ -1,6 +1,8 @@
 import { boxComponent } from './components/dot';
 import { desanitizeText, translate } from './utils/translate';
 import { onInnerHTMLChange, onReadyElement, isDotPresent } from './utils/watchers';
+import { addToGoogleCalendar } from './utils/calender';
+import { simulateMouseEvents, sendMessage } from './utils/sendSelf';
 
 const translateMessagesCallback = async (e: Event) => {
      const messagesIn = document.querySelectorAll('.message-in .copyable-text .selectable-text span');
@@ -28,6 +30,24 @@ const translateInputCallback = async (e: MutationRecord[]) => {
 }
 
 try {
+    // get the message from background script
+     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+      if(request.id === 'addtocalender') {
+        let description = request.text;
+        addToGoogleCalendar(description);
+      }
+
+      if(request.id === 'sendself') {
+        let description = request.text;
+        const selfContact = '+' + localStorage.getItem('last-wid-md')?.split(':')[0].slice(1);
+        const selfContactWithSpace = selfContact.slice(0, 3) + ' ' + selfContact.slice(3, 8) + ' ' + selfContact.slice(8);
+        console.log(selfContactWithSpace);
+        
+        simulateMouseEvents(document.querySelector('[title="' + selfContactWithSpace + '"]'), 'mousedown');
+        setTimeout(() => {sendMessage(description)}, 1000);
+      }
+     });
+
      onReadyElement('.app-wrapper-web > .two > div:nth-child(4)', () => {
           console.log('WhatsApp Web is ready');
           const chatAreaNode = document.querySelector('.app-wrapper-web > .two > div:nth-child(4)');
